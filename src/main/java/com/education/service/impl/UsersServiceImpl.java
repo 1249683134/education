@@ -1,5 +1,6 @@
 package com.education.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.education.dao.UsersDao;
 import com.education.domain.Users;
@@ -26,5 +27,12 @@ public class UsersServiceImpl extends ServiceImpl<UsersDao, Users> implements Us
     @Override
     public boolean deleteUsers(String id) {
         return usersDao.deleteById(id) > 0;
+    }
+
+    @Override
+    public boolean checkAccount(Users user) {
+        QueryWrapper<Users> wrapper = new QueryWrapper<>();
+        wrapper.eq("id", user.getId()).eq("password", user.getPassword());
+        return usersDao.selectOne(wrapper)!=null ;
     }
 }

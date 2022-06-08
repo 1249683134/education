@@ -2,7 +2,6 @@ package com.education.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.education.domain.Game;
-import com.education.domain.Home;
 
 public interface GameService extends IService<Game> {
     //插入

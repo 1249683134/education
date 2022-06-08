@@ -14,4 +14,7 @@ public interface UsersService extends IService<Users> {
     //删除
     boolean deleteUsers(String id);
 
+    //登录验证
+    boolean checkAccount(Users user);
+
 }

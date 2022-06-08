@@ -26,4 +26,5 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoDao, UserInfo> impl
     public boolean deleteUserInfo(String id) {
         return userInfoDao.deleteById(id) > 0;
     }
+
 }

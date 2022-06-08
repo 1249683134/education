@@ -1,5 +1,6 @@
 package com.education.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.education.domain.Users;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,15 @@ public class UsersDaoTest {
         users.setId("666");
         users.setPassword("666");
         System.out.println(usersDao.insert(users));
+    }
+
+    @Test
+    void checkAccount() {
+        String id = "111";
+        String psw = "111";
+        QueryWrapper<Users> wrapper = new QueryWrapper<>();
+        wrapper.eq("id",id).eq("password",psw);
+        usersDao.selectList(wrapper).forEach(System.out::println);
+
     }
 }

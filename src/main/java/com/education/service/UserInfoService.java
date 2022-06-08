@@ -12,4 +12,5 @@ public interface UserInfoService extends IService<UserInfo> {
 
     //删除
     boolean deleteUserInfo(String id);
+
 }
