@@ -8,6 +8,6 @@ public class UserInfo {
     private String name;
     private String sex;
     private String birthday;
-    private Integer home_id;
+    private String home_id;
     private Integer state;
 }

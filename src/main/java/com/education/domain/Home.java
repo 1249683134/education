@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 public class Home {
-    @TableId(value = "home_id", type = IdType.AUTO)
-    private Integer home_id;
+    @TableId("home_id")
+    private String home_id;
     private String home_password;
     private String home_name;
 }

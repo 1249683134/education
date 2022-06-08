@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class Game {
-    @TableId(value = "child_id", type = IdType.AUTO)
+    @TableId(value = "child_id")
     private String child_id;
     private Integer answers;
     private Integer accuracy;
