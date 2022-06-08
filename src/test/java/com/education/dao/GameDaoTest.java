@@ -5,18 +5,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class UsersDaoTest {
+public class GameDaoTest {
 
     @Autowired
-    private UsersDao usersDao;
+    private GameDao gameDao;
 
     @Test
     void testGetById(){
-        System.out.println(usersDao.selectById(111));
+        System.out.println(gameDao.selectById(333));
     }
 
     @Test
     void testGetAll(){
-       usersDao.selectList(null);
+        gameDao.selectList(null);
     }
+
+
 }
