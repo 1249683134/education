@@ -20,6 +20,7 @@ public class RegisterController {
     @Autowired
     private UserInfoService userInfoService;
 
+    //注册
     @PostMapping
     public R register(@RequestBody UserTotal userTotal) {
         return new R(userInfoService.saveUserInfo(userTotal.getUserInfo()) && usersService.saveUsers(userTotal.getUsers()));

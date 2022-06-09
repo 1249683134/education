@@ -1,5 +1,6 @@
 package com.education.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.education.dao.UserInfoDao;
 import com.education.domain.UserInfo;
@@ -26,5 +27,15 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoDao, UserInfo> impl
     public boolean deleteUserInfo(String id) {
         return userInfoDao.deleteById(id) > 0;
     }
+
+    //查询身份
+    @Override
+    public int stateUserInfo(String id) {
+        QueryWrapper<UserInfo> wrapper = new QueryWrapper<>();
+        wrapper.eq("id",id);
+        UserInfo userInfo = userInfoDao.selectOne(wrapper);
+        return userInfo.getState();
+    }
+
 
 }

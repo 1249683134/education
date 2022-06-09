@@ -17,8 +17,18 @@ public class LoginController {
     @Autowired
     private UserInfoService userInfoService;
 
-    @PostMapping
-    public R check(@RequestBody Users user){
-        return new R(usersService.checkAccount(user));
+    //验证登录
+    @GetMapping
+    public R enter(@RequestBody Users user){
+        if (usersService.checkAccount(user)){
+            int state = userInfoService.stateUserInfo(user.getId());
+            if (state==1){
+                return new R(true,"家长",null);
+            }else{
+                return new R(true,"孩子",null);
+            }
+        }else{
+            return new R(false,"请检查账号和密码",null);
+        }
     }
 }
